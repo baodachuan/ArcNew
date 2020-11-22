@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':blibrary', ':bui'
 rootProject.name='jiagoushi'
