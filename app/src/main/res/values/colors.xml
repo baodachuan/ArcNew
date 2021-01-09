@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <!--    TabBottom-->
+    <color name="tabBottomDefaultColor">#ff656667</color>
+    <color name="tabBottomTintColor">#ffd44949</color>
+    <color name="color_gray1">#f1f2f3</color>
 </resources>

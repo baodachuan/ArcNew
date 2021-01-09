@@ -45,6 +45,10 @@ public class HiTabBottom extends RelativeLayout implements IHiTab<HiTabBottomInf
         mTabNameView=findViewById(R.id.tv_name);
     }
 
+    public HiTabBottomInfo getHiTabInfo() {
+        return mTabInfo;
+    }
+
 
     @Override
     public void setHiTabInfo(@NonNull HiTabBottomInfo<?> data) {

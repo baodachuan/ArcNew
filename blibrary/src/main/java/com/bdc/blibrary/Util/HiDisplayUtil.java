@@ -9,8 +9,15 @@ import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 
+import org.devio.hi.library.util.AppGlobals;
+
 public class HiDisplayUtil {
     public static int dp2px(float dp, Resources resources) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.getDisplayMetrics());
+    }
+
+    public static int dp2px(float dp) {
+        Resources resources = AppGlobals.INSTANCE.get().getResources();
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.getDisplayMetrics());
     }
 

@@ -4,32 +4,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 
 import com.bdc.bui.tab.bottom.HiTabBottom;
 import com.bdc.bui.tab.bottom.HiTabBottomInfo;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MainActivityLogic.ActivityProvider {
+    private MainActivityLogic logic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        HiTabBottom bottom=findViewById(R.id.tab_bottom);
-        HiTabBottomInfo tabBottomInfo=new HiTabBottomInfo(
-                "首页","font/iconfont.ttf",
-                getString(R.string.if_home),null,
-                "#ff656667","#ffd44949"
+        logic=new MainActivityLogic(this,savedInstanceState);
 
-        );
-        bottom.setHiTabInfo(tabBottomInfo);
+    }
 
-
-        findViewById(R.id.hello).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,LogDemoActivity.class));
-            }
-        });
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        logic.onSaveInstanceState(outState);
     }
 }
